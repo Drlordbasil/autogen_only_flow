@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python AI Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo" role="banner">Python AI Tool</div>
+            <ul class="nav-links">
+                <li><a href="/" class="tooltip" data-tooltip="Back to Home">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="tool-page">
+        <section class="prompt-section">
+            <h2>What would you like to create?</h2>
+            <div class="prompt-input">
+                <textarea id="prompt-input" 
+                         placeholder="Describe what you want to create in natural language... 
+Examples:
+- Create a function that calculates fibonacci numbers
+- Write a web scraper for news articles
+- Make a simple game of tic-tac-toe"
+                         spellcheck="false"
+                         aria-label="Natural language prompt"></textarea>
+                <button onclick="generatePythonCode()" 
+                        class="tooltip" 
+                        data-tooltip="Generate Python Code">
+                    Generate Code
+                    <span class="loading-indicator"></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="code-section" style="display: none;">
+            <h2>Generated Code</h2>
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-title">Python Code</span>
+                    <div class="code-actions">
+                        <button onclick="editCode()" class="tooltip" data-tooltip="Edit Code">
+                            <span class="icon">✎</span>
+                        </button>
+                        <button onclick="runCode()" class="tooltip" data-tooltip="Run Code">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="code-display">
+                    <pre><code id="generated-code"></code></pre>
+                </div>
+                <div class="code-editor" style="display: none;">
+                    <textarea id="code-editor" spellcheck="false"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <section class="output-section" style="display: none;">
+            <h2>Output</h2>
+            <div id="code-output" class="output"></div>
+        </section>
+
+        <section class="test-section" style="display: none;">
+            <h2>Tests</h2>
+            <div id="test-results" class="test-results"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', path='/js/python_tool.js') }}"></script>
+</body>
+</html>

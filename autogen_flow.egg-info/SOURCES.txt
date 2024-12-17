@@ -1,0 +1,13 @@
+README.md
+setup.py
+agents/__init__.py
+agents/debug_team.py
+agents/research_team.py
+agents/team_manager.py
+autogen_flow.egg-info/PKG-INFO
+autogen_flow.egg-info/SOURCES.txt
+autogen_flow.egg-info/dependency_links.txt
+autogen_flow.egg-info/requires.txt
+autogen_flow.egg-info/top_level.txt
+tests/test_main.py
+tests/test_teams.py

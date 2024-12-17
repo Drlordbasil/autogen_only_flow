@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+jinja2
+aiofiles
+pytest
+pytest-asyncio
+requests
+pyautogen
+httpx
+matplotlib
+yfinance
+pathlib
+typing
